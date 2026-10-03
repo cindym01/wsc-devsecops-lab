@@ -1,0 +1,17 @@
+[project]
+name = "wsc-devsecops-lab"
+version = "1.0.0"
+description = "Team Directory API: intentionally small training app for the WSC DevSecOps lab"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+# "Does it build?" for this lab: syntax errors, undefined names, unused imports.
+# Style rules are left off so an AI agent's normal code style doesn't fail step 2.
+select = ["E4", "E7", "E9", "F"]
