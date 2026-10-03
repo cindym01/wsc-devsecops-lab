@@ -50,3 +50,11 @@ def find_user(username):
     return get_db().execute(
         "SELECT id, username FROM users WHERE username = ?", (username,)
     ).fetchone()
+
+
+def find_user_profile(user_id):
+    return get_db().execute(
+        "SELECT id, username, full_name, email, phone, home_address "
+        "FROM users WHERE id = ?",
+        (user_id,),
+    ).fetchone()
